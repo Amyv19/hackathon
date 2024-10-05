@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calidad del Aire y Mapa</title>
+    <link rel="stylesheet" href="Airestyles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Monitoreo de la Calidad del Aire</h1>
+        <div class="search-box">
+            <input type="text" id="city" placeholder="Ingresa el nombre de la ciudad">
+            <button id="getAQI">Consultar</button>
+        </div>
+        <div id="result" class="result-box">
+            <h2 id="cityName"></h2>
+            <p><strong>Índice de calidad del aire (AQI):</strong> <span id="aqi"></span></p>
+            <p><strong>CO:</strong> <span id="co"></span> µg/m³</p>
+            <p><strong>NO:</strong> <span id="no"></span> µg/m³</p>
+            <p><strong>O<sub>3</sub>:</strong> <span id="o3"></span> µg/m³</p>
+            <p><strong>PM2.5:</strong> <span id="pm25"></span> µg/m³</p>
+        </div>
+        <div id="map" class="map-box"></div>
+        <div class="chart-container">
+            <div id="loadingMessage">Cargando gráfica...</div>
+            <canvas id="airQualityChart" style="display:none;"></canvas>
+        </div>
+        
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="Airescript.js"></script>
+</body>
+</html>
